@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.ripple {
+	    position: relative;
+	    //隐藏溢出的径向渐变背景
+	    
+	}
+.bw{
+	overflow: hidden;
+	    width:200px;
+	    height:30px;
+}
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+   width:100%;
+    height:100%;
+    background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .3s, opacity .5s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    
+    transition: 0s;
+}
+
+	</style>
+</head>
+<body>
+		<div class="bw">
+        	<button class="ripple" style="width:100px;height:50px;border:0;background:none;outline:none;background:#f40">Button</button>
+       </div>
+
+
+</body>
+</html>
